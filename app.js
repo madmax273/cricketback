@@ -2,12 +2,13 @@ const express = require("express");
 const app = express();
 const mysql = require("mysql");
 const cors = require("cors");
+require("dotenv").config();
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Adangaji*273",
-  database: "cricketdb",
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
 });
 
 db.connect(function (err) {
